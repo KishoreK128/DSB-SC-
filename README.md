@@ -48,14 +48,42 @@ Model Waveform
 <img width="703" height="679" alt="image" src="https://github.com/user-attachments/assets/e7c7c7f8-ccf2-41ac-b1f3-325989941a6f" />
 
 Program
+```
+ac=20.4;
+Am=10.2;
+fc=5900;
+fm=590;
+fs=59000;
+t=0:1/fs:2/fm;
+wc=2*3.14*fc;
+wm=2*3.14*fm;
+e1=(Am*sin(wm*t));
+subplot(3,1,1);
+plot(t,e1);
+title("Modulating signal");
+xgrid
+e2=(ac*sin(wc*t));
+subplot(3,1,2);
+plot(t,e2);
+title("Carrier signal");
+xgrid
+e3=(Am/2.*cos(wc*t-wm*t))-(Am/2.*cos(wc*t+wm*t));
+subplot(3,1,3);
+plot(t,e3);
+title("Double side band suppressed carrier");
+xgrid
 
+```
 Output Graph
+<img width="1920" height="1080" alt="dsb 1" src="https://github.com/user-attachments/assets/78674a12-77b0-4ed3-b34c-526b05d40d8f" />
 
 
 Tablular Column
+![WhatsApp Image 2025-11-11 at 10 49 11_26bfcfd0](https://github.com/user-attachments/assets/d7819b6f-1ba0-45ec-9632-48eb645f83d0)
 
 
 Result
+
 
 Thus the DSB-SC-AM Modulation and Demodulation is generated.
 
